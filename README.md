@@ -12,7 +12,7 @@ d1 <- as.dendrogram(h)
 plot(as.dendrogram(d1))
 ```
 
-![](E:/GitHub/MachineLearning/assignment/1/Assignment1_files/figure-markdown_github/unnamed-chunk-1-1.png)
+![](Assignment1_files/figure-markdown_github/unnamed-chunk-1-1.png)
 
 ``` r
 # Interpretation :
@@ -147,7 +147,7 @@ stars(eupop[o,],nrow=4,col.stars=clusk[o]+1,main = "Kmeans Clustering")
 plot(as.dendrogram(d1),main="Hierarchical Clustering")
 ```
 
-![](Assignment1_files/figure-markdown_github/unnamed-chunk-4-3.png)
+![](unnamed-chunk-4-3.png)
 
 #### 4. Music data from class.
 
