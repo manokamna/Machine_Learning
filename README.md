@@ -138,7 +138,7 @@ stars(eupop[o,],nrow=3,col.stars=clusk[o]+1)
 pairs(eupop,col=kmeanseuc$cluster,pch=cutree(h,3)-1)
 ```
 
-![](Assignment1_files/figure-markdown_github/unnamed-chunk-4-2.png)
+![](unnamed-chunk-4-2.png)
 
 ``` r
 ## Displaying results of both clustering on same graphical display
@@ -147,7 +147,7 @@ stars(eupop[o,],nrow=4,col.stars=clusk[o]+1,main = "Kmeans Clustering")
 plot(as.dendrogram(d1),main="Hierarchical Clustering")
 ```
 
-![](Assignment1_files/figure-markdown_github/unnamed-chunk-4-3.png)
+![](unnamed-chunk-4-3.png)
 
 #### 4. Music data from class.
 
@@ -200,7 +200,7 @@ twssv <- rapply(twss,c)
 plot(k,twssv,type="b",xlab = "Number Of Cluster",ylab = "Total Sum of Squares")
 ```
 
-![](Assignment1_files/figure-markdown_github/unnamed-chunk-5-1.png)
+![](unnamed-chunk-5-1.png)
 
 ``` r
 ## As per plot TWSS is changing slowly at k=4,5 but the after k=5 ,the change is not significant.Hence the best fitting number of cluster is 5.
@@ -252,7 +252,7 @@ twssv <- rapply(twss,c)
 plot(k1,twssv,type="b",xlab = "Number Of Cluster",ylab = "Total Sum of Squares")
 ```
 
-![](Assignment1_files/figure-markdown_github/unnamed-chunk-7-1.png)
+![](unnamed-chunk-7-1.png)
 
 ``` r
 # As per plot the optimal cluster seems to be 6 as TWSS is not increasing significantly.The other two possible candidates are 5 and 7 clusters.
@@ -264,7 +264,7 @@ v <- order(analysis$cluster)
 stars(proteins[v,],nrow=4,col.stars=analysis$cluster[v]+1)
 ```
 
-![](Assignment1_files/figure-markdown_github/unnamed-chunk-7-2.png)
+![](unnamed-chunk-7-2.png)
 
 ``` r
 analysis$cluster
