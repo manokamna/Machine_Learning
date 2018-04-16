@@ -130,7 +130,7 @@ o <- order(clusk)
 stars(eupop[o,],nrow=3,col.stars=clusk[o]+1)
 ```
 
-![](Assignment1_files/figure-markdown_github/unnamed-chunk-4-1.png)
+![](unnamed-chunk-4-1.png)
 
 ``` r
 ####optional
@@ -147,7 +147,7 @@ stars(eupop[o,],nrow=4,col.stars=clusk[o]+1,main = "Kmeans Clustering")
 plot(as.dendrogram(d1),main="Hierarchical Clustering")
 ```
 
-![](unnamed-chunk-4-3.png)
+![](Assignment1_files/figure-markdown_github/unnamed-chunk-4-3.png)
 
 #### 4. Music data from class.
 
