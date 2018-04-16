@@ -12,7 +12,7 @@ d1 <- as.dendrogram(h)
 plot(as.dendrogram(d1))
 ```
 
-![](Assignment1_files/figure-markdown_github/unnamed-chunk-1-1.png)
+![](unnamed-chunk-1-1.png)
 
 ``` r
 # Interpretation :
