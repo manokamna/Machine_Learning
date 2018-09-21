@@ -1,4 +1,4 @@
-##### 1. The Titanic dataset records for each person on the ship the passenger class, age (child or adult), and sex, and whether they survived or not.In this assignment you will use logistic regression on a training set (ttrain) to develop a classification rule, and then this rule will be applied to the test set (ttest).
+##### 1. The Titanic dataset
 
     setwd("E:/maynooth/2nd_sem/ST464StatisticalMachineLearning/assignment/3")
     ttrain <- read.csv("ttrain.csv", header=T, row.names=1)
@@ -15,7 +15,7 @@
 
     attach(ttrain)
 
-##### (a) Use logistic regression to build a model relating Survived to Class Age and Sex for the training data ttrain.
+##### logistic regression : Survived to Class Age and Sex 
 
     lfit <- glm(Survived~Sex+Age+Class,family="binomial",data=ttrain)
     summary(lfit)
@@ -50,8 +50,7 @@
 
     # Here model is 99.9 percent confident that all predictors are significant to model.
 
-##### (b) From the fitted model, calculate a vector prob of survival probabilities and a vector pred of predicted classes, for the training data. What proportion of survivors are missclassified? What proportion of those who died are missclassified? What proportion of the predicted survivors actually survived? What is the overall error rate for the training data?
-
+##### Confusion Matrix
     prob <- predict(lfit,ttrain, type="response")
     pred <- factor(ifelse(prob < .5, "No", "Yes"))
     table(ActualValue=ttrain$Survived, PredictedValue=pred)
@@ -88,7 +87,7 @@
 
     ## [1] 0.2157865
 
-##### (c)From the fitted model, calculate a vector prob of survival probabilities and a vectorpred of predicted classes, for the test data. What proportion of survivors are missclassified? What proportion of those who died are missclassified? What proportionof the predicted survivors actually survived? What is the overall error rate for the test data?
+##### Confusion Matrix of test data
 
     # prob of survival probabilities
     prob <- predict(lfit, ttest,type="response")
@@ -246,7 +245,7 @@ obtained?
 
     # The model error rate is 12.75 percent.
 
-##### (c) Repeat (b) using quadratic discriminant analysis. Which is better, LDA or QDA?
+##### LDA vs QDA
 
     qdafit <- qda(mpg01 ~ weight+acceleration,data = Atrain)
     qdafit
@@ -297,7 +296,7 @@ obtained?
 
     # The overall error is 12.24 percent which is slightly less than 12.75 percent.It means data point is classified more perfectly than LDA. This establishes QDA is better fit than LDA. 
 
-##### (d) Perform a linear discriminant analysis to predict mpg01, using variables displacement, horsepower, weight and acceleration on the training set. What is the test error of the model obtained?
+##### (d) LDA
 
     ldafit_new <- lda(mpg01 ~ weight+acceleration+horsepower+displacement,data = Atrain)
     ldafit_new
@@ -345,7 +344,7 @@ obtained?
 
     # The overall error rate of LDA is 10.20 percent.
 
-##### (e) Repeat (d) using quadratic discriminant analysis.Which is better, LDA or QDA?
+##### (e) QDA Vs LDA
 
     qdafit_new <- qda(mpg01 ~ weight+acceleration+horsepower+displacement,data = Atrain)
     qdafit_new
@@ -386,8 +385,7 @@ obtained?
 
     # The overall error rate in QDA is 12.22% which is greater than LDA .It means classification rate is more correct in LDA as compared with QDA. As per overall rate ,LDA is performing better than QDA.
 
-##### (f) Perform KNN with response of mpg01, and the four predictors displacement, horsepower, weight and acceleration. Remember to scale the predictors. Use k = 5 and k = 30. Which value of k gives the best result on the test set?
-
+##### (f) KNN : response: mpg01
     scaledtrain <- scale(Atrain[,3:6])
     scaletest <- scale(Atest[ ,3:6])
 
@@ -438,7 +436,7 @@ obtained?
     # The overall rate for k=30 is 10.71 percent.
     # The error rate is increase due to increase in k. So for KNN algorithm at k=5 is the good as compared with k=30.
 
-##### 5. Dataset on diabetes in Pima Indian Women in library(MASS). For a description of the data see ?Pima.tr.Use any supervised classification technique to predict diabetes from the 7 available features. Train your algorithms on Pima.tr and present the overall error rate for the test data Pima.te.
+##### 5. Pima Dataset on diabetes 
 
     library("MASS")
     library("dplyr")
